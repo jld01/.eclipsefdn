@@ -119,5 +119,17 @@ orgs.newOrg('tools.cdt', 'eclipse-cdt') {
         custom_branch_protection_rule('*'),
       ],
     },
+    orgs.newRepo('homebrew-tools') {
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Additional formulae for the Homebrew package manager",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      branch_protection_rules: [
+        custom_branch_protection_rule('*'),
+      ],
+    },
   ],
 }
